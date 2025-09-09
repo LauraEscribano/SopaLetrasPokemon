@@ -1,90 +1,99 @@
 @font-face {
     font-family: "pokemon-classic";
     src: url(./pokemon-classic.ttf);
-  }
+}
 
 body {
-  background-image: url(./imagenes/fondo.gif);
-  font-family: "pokemon-classic";
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white; /* Espacio en blanco alrededor si la imagen no llena */
+    font-family: "pokemon-classic";
 }
 
-
-  button, select, option {
+button, select, option {
     font-family: "pokemon-classic";
-  }
+}
 
 #pokedex {
-  position: absolute;       
-  max-width: 100%;    
-  max-height: 100%; 
-  transform: translate(-50%, -50%); 
-  object-fit: contain;
-  z-index: -1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translate(-50%, -50%);
+    object-fit: contain; /* Mantiene proporciones sin recortar */
+    z-index: -1;
 }
 
-
-  #tabla-dificultad {
-    float: right;
+#tabla-dificultad {
+    position: relative; /* Ya no usamos float */
     margin-right: 6%;
     margin-top: 4%;
-  }
+    float: right;
+    z-index: 1; /* Por encima de la Pokédex */
+}
 
-  table {
+table {
     border-collapse: collapse;
     margin: auto;
     text-transform: uppercase;
-  }
+}
 
-  td {
+td {
     width: 30px;
     height: 30px;
     border: 1px solid #000;
     background-color: white;
     text-align: center;
     cursor: pointer;
-  }
+}
 
-  .correct {
+.correct {
     background-color: #8eff8e; /* Verde claro */
-  }
+}
 
-  #word-list {
+#word-list {
     margin-top: 70%;
-  }
+}
 
-  #word-list img {
+#word-list img {
     max-width: 50px;
     max-height: 50px;
     vertical-align: middle;
     margin-right: 10px;
-  }
+}
 
-  .completed {
+.completed {
     text-decoration: line-through;
     color: #555;
-  }
+}
 
-  .pista {
+.pista {
     background-color: orange;
     color: white;
-  }
+}
 
-  .palabra-correcta {
+.palabra-correcta {
     background-color: green;
     color: white;
-  }
+}
 
-  .letras-seleccionadas {
+.letras-seleccionadas {
     background-color: blue;
     color: white;
-  }
+}
 
-  #contenido-central {
+#contenido-central {
     text-align: center;
     width: 65%;
-  }
+}
 
-  #mensaje {
+#mensaje {
     display: none;
     position: absolute;
     text-align: center;
@@ -93,4 +102,4 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-  }
+}
