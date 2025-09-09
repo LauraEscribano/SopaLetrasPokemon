@@ -9,16 +9,17 @@ html, body {
   width: 100%;
   height: 100%;
   font-family: "pokemon-classic";
-  background-image: url(./imagenes/fondo.gif);
-  background-size: cover;
-  background-position: center;
   display: flex;
   justify-content: center;
   align-items: center;
   overflow: hidden;
+  background-image: url(./imagenes/fondo.gif), url(./imagenes/pokedex.png);
+  background-size: cover, contain; /* fondo normal cubre toda la pantalla, pokedex mantiene proporción */
+  background-repeat: no-repeat, no-repeat;
+  background-position: center, center; /* centra la pokedex */
 }
 
-/* Contenedor que mantiene proporciones fijas */
+/* Contenedor fijo con escala */
 #app-container {
   width: 1200px; /* ancho de referencia */
   height: 800px; /* alto de referencia */
@@ -26,18 +27,8 @@ html, body {
   transform-origin: top left;
 }
 
-/* Escala según el tamaño de pantalla */
 body > #app-container {
   transform: scale(calc(100vw / 1200));
-}
-
-/* Pokédex de fondo */
-#pokedex {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-  object-fit: contain;
 }
 
 /* Panel de dificultad */
