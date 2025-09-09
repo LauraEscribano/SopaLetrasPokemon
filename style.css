@@ -15,13 +15,16 @@ body {
 
 #pokedex {
   position: absolute;
-  top: 0;
-  width: auto;      
-  height: 100vh;    
-  max-width: 100%;  
+  top: 50%;
+  left: 50%;
+  height: 100vh;     
+  width: auto;        
+  max-width: 100%;    
+  transform: translate(-50%, -50%); 
   object-fit: contain;
   z-index: -1;
 }
+
 
   #tabla-dificultad {
     float: right;
