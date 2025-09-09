@@ -8,6 +8,15 @@
     font-family: "pokemon-classic";
   }
 
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 1366px;
+    height: 768px;
+    overflow: hidden; /* Sin scroll */
+    position: relative;
+}
+
   button, select, option {
     font-family: "pokemon-classic";
   }
