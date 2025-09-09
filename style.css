@@ -6,9 +6,6 @@
 body {
   background-image: url(./imagenes/fondo.gif);
   font-family: "pokemon-classic";
-  background-size: contain;
-  background-repeat: no-repeat; 
-  background-position: center center;
 }
 
 
@@ -16,11 +13,16 @@ body {
     font-family: "pokemon-classic";
   }
 
-  #pokedex {
-    position: absolute;
-    width: 100%;
-    z-index: -1;
-  }
+#pokedex {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: auto;      
+  height: 100vh;    
+  max-width: 100%;  
+  object-fit: contain;
+  z-index: -1;
+}
 
   #tabla-dificultad {
     float: right;
