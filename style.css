@@ -15,7 +15,7 @@ body {
   align-items: center;
 }
 
-/* Contenedor principal con la Pokédex y contenido */
+/* Contenedor de la Pokédex + contenido */
 #pokedex-container {
   position: relative;
   width: 900px; /* tamaño fijo */
@@ -26,6 +26,7 @@ body {
   flex-direction: row;
   justify-content: space-between;
   padding: 20px;
+  box-sizing: border-box;
 }
 
 /* Panel de dificultad / lista de palabras */
@@ -34,6 +35,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  z-index: 1; /* sobre la Pokédex */
 }
 
 /* Contenido central: tabla de la sopa de letras */
@@ -42,6 +44,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  z-index: 1; /* sobre la Pokédex */
 }
 
 /* Tabla de letras */
@@ -60,25 +63,11 @@ td {
 }
 
 /* Estilos para palabras encontradas */
-.correct {
-  background-color: #8eff8e;
-}
-.completed {
-  text-decoration: line-through;
-  color: #555;
-}
-.pista {
-  background-color: orange;
-  color: white;
-}
-.palabra-correcta {
-  background-color: green;
-  color: white;
-}
-.letras-seleccionadas {
-  background-color: blue;
-  color: white;
-}
+.correct { background-color: #8eff8e; }
+.completed { text-decoration: line-through; color: #555; }
+.pista { background-color: orange; color: white; }
+.palabra-correcta { background-color: green; color: white; }
+.letras-seleccionadas { background-color: blue; color: white; }
 
 /* Mensajes centrados dentro del contenedor */
 #mensaje {
@@ -90,6 +79,7 @@ td {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  z-index: 2; /* encima de todo */
 }
 
 /* Lista de palabras */
