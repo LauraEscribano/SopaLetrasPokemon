@@ -3,10 +3,14 @@
     src: url(./pokemon-classic.ttf);
   }
 
-  body {
-    background-image: url(./imagenes/fondo.gif);
-    font-family: "pokemon-classic";
-  }
+body {
+  background-image: url(./imagenes/fondo.gif);
+  font-family: "pokemon-classic";
+  background-size: contain;
+  background-repeat: no-repeat; 
+  background-position: center center;
+}
+
 
   button, select, option {
     font-family: "pokemon-classic";
