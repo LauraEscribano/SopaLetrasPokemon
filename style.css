@@ -1,94 +1,91 @@
 @font-face {
-  font-family: "pokemon-classic";
-  src: url(./pokemon-classic.ttf);
-}
+    font-family: "pokemon-classic";
+    src: url(./pokemon-classic.ttf);
+  }
 
-body {
-  margin: 0;
-  height: 100vh;
-  background-image: url(./imagenes/fondo.gif);
-  background-size: cover;
-  background-position: center;
-  font-family: "pokemon-classic";
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+  body {
+    background-image: url(./imagenes/fondo.gif);
+    font-family: "pokemon-classic";
+  }
 
-/* Contenedor de la Pokédex + contenido */
-#pokedex-container {
-  position: relative;
-  width: 900px; /* tamaño fijo */
-  height: 600px; /* tamaño fijo */
-  background: url(./imagenes/pokedex.png) no-repeat center;
-  background-size: contain; /* mantiene proporciones */
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  padding: 20px;
-  box-sizing: border-box;
-}
+  button, select, option {
+    font-family: "pokemon-classic";
+  }
 
-/* Panel de dificultad / lista de palabras */
-#tabla-dificultad {
-  width: 30%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  z-index: 1; /* sobre la Pokédex */
-}
+  #pokedex {
+    position: absolute;
+    width: 100%;
+    z-index: -1;
+  }
 
-/* Contenido central: tabla de la sopa de letras */
-#contenido-central {
-  width: 65%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  z-index: 1; /* sobre la Pokédex */
-}
+  #tabla-dificultad {
+    float: right;
+    margin-right: 6%;
+    margin-top: 4%;
+  }
 
-/* Tabla de letras */
-table {
-  border-collapse: collapse;
-  text-transform: uppercase;
-}
+  table {
+    border-collapse: collapse;
+    margin: auto;
+    text-transform: uppercase;
+  }
 
-td {
-  width: 30px;
-  height: 30px;
-  border: 1px solid #000;
-  text-align: center;
-  cursor: pointer;
-  background-color: white;
-}
+  td {
+    width: 30px;
+    height: 30px;
+    border: 1px solid #000;
+    background-color: white;
+    text-align: center;
+    cursor: pointer;
+  }
 
-/* Estilos para palabras encontradas */
-.correct { background-color: #8eff8e; }
-.completed { text-decoration: line-through; color: #555; }
-.pista { background-color: orange; color: white; }
-.palabra-correcta { background-color: green; color: white; }
-.letras-seleccionadas { background-color: blue; color: white; }
+  .correct {
+    background-color: #8eff8e; /* Verde claro */
+  }
 
-/* Mensajes centrados dentro del contenedor */
-#mensaje {
-  display: none;
-  position: absolute;
-  text-align: center;
-  background-color: white;
-  padding: 2%;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 2; /* encima de todo */
-}
+  #word-list {
+    margin-top: 70%;
+  }
 
-/* Lista de palabras */
-#word-list {
-  margin-top: 20px;
-}
+  #word-list img {
+    max-width: 50px;
+    max-height: 50px;
+    vertical-align: middle;
+    margin-right: 10px;
+  }
 
-#word-list img {
-  max-width: 50px;
-  max-height: 50px;
-  margin-right: 10px;
-}
+  .completed {
+    text-decoration: line-through;
+    color: #555;
+  }
+
+  .pista {
+    background-color: orange;
+    color: white;
+  }
+
+  .palabra-correcta {
+    background-color: green;
+    color: white;
+  }
+
+  .letras-seleccionadas {
+    background-color: blue;
+    color: white;
+  }
+
+  #contenido-central {
+    text-align: center;
+    width: 65%;
+  }
+
+  #mensaje {
+    display: none;
+    position: absolute;
+    text-align: center;
+    background-color: white;
+    padding: 2%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
