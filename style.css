@@ -1,92 +1,109 @@
-html, body {
+@font-face {
+    font-family: "pokemon-classic";
+    src: url(./pokemon-classic.ttf);
+  }
+
+body, html {
   margin: 0;
   padding: 0;
   width: 100%;
   height: 100%;
-  font-family: "pokemon-classic";
+  overflow: hidden; /* Evita scroll */
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow: hidden;
-  background-image: url(./imagenes/fondo.gif), url(./imagenes/pokedex.png);
-  background-size: cover, contain; /* fondo cubre toda la pantalla, pokedex encaja */
-  background-repeat: no-repeat, no-repeat;
-  background-position: center, center; /* centra la pokedex */
+  background-color: black; /* Opcional, borde alrededor del contenedor */
 }
-
-/* Contenedor fijo que mantiene proporciones */
-#app-container {
-  width: 1200px;  /* tamaño base de referencia */
-  height: 800px;  /* tamaño base de referencia */
+#game-container {
+  width: 1366px;
+  height: 768px;
+  transform-origin: top left; /* Escalar desde esquina superior izquierda */
   position: relative;
-  transform-origin: top left;
-  /* Escala automáticamente al tamaño de la pantalla */
-  transform: scale(calc(min(100vw / 1200, 100vh / 800)));
 }
 
-/* Panel de dificultad */
-#tabla-dificultad {
-  position: absolute;
-  right: 6%;
-  top: 4%;
-  width: 30%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+@media screen and (max-width: 1366px), screen and (max-height: 768px) {
+  #game-container {
+    transform: scale(calc(100vw / 1366));
+  }
 }
+  button, select, option {
+    font-family: "pokemon-classic";
+  }
 
-/* Contenido central (tabla de letras) */
-#contenido-central {
-  position: absolute;
-  left: 5%;
-  top: 10%;
-  width: 65%;
-  text-align: center;
-}
+  #pokedex {
+    position: absolute;
+    width: 100%;
+    z-index: -1;
+  }
 
-/* Tabla de letras */
-table {
-  border-collapse: collapse;
-  margin: auto;
-  text-transform: uppercase;
-}
+  #tabla-dificultad {
+    float: right;
+    margin-right: 6%;
+    margin-top: 4%;
+  }
 
-td {
-  width: 30px;
-  height: 30px;
-  border: 1px solid #000;
-  background-color: white;
-  text-align: center;
-  cursor: pointer;
-}
+  table {
+    border-collapse: collapse;
+    margin: auto;
+    text-transform: uppercase;
+  }
 
-/* Estados de las letras */
-.correct { background-color: #8eff8e; }
-.completed { text-decoration: line-through; color: #555; }
-.pista { background-color: orange; color: white; }
-.palabra-correcta { background-color: green; color: white; }
-.letras-seleccionadas { background-color: blue; color: white; }
+  td {
+    width: 30px;
+    height: 30px;
+    border: 1px solid #000;
+    background-color: white;
+    text-align: center;
+    cursor: pointer;
+  }
 
-/* Lista de palabras */
-#word-list {
-  margin-top: 20px;
-}
+  .correct {
+    background-color: #8eff8e; /* Verde claro */
+  }
 
-#word-list img {
-  max-width: 50px;
-  max-height: 50px;
-  vertical-align: middle;
-  margin-right: 10px;
-}
+  #word-list {
+    margin-top: 70%;
+  }
 
-/* Mensajes */
-#mensaje {
-  display: none;
-  position: absolute;
-  text-align: center;
-  background-color: white;
-  padding: 2%;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
+  #word-list img {
+    max-width: 50px;
+    max-height: 50px;
+    vertical-align: middle;
+    margin-right: 10px;
+  }
+
+  .completed {
+    text-decoration: line-through;
+    color: #555;
+  }
+
+  .pista {
+    background-color: orange;
+    color: white;
+  }
+
+  .palabra-correcta {
+    background-color: green;
+    color: white;
+  }
+
+  .letras-seleccionadas {
+    background-color: blue;
+    color: white;
+  }
+
+  #contenido-central {
+    text-align: center;
+    width: 65%;
+  }
+
+  #mensaje {
+    display: none;
+    position: absolute;
+    text-align: center;
+    background-color: white;
+    padding: 2%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
