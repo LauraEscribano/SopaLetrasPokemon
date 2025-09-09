@@ -1,153 +1,91 @@
 @font-face {
-  font-family: "pokemon-classic";
-  src: url(./pokemon-classic.ttf);
-}
-
-body {
-  background-image: url(./imagenes/fondo.gif);
-  font-family: "pokemon-classic";
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-/* Botones y select */
-button, select, option {
-  font-family: "pokemon-classic";
-  font-size: 1em;
-  padding: 0.5em 1em;
-  margin: 0.2em 0;
-}
-
-/* Imagen de fondo */
-#pokedex {
-  position: absolute;
-  width: 100%;
-  height: auto;
-  z-index: -1;
-}
-
-/* Panel lateral */
-#tabla-dificultad {
-  float: right;
-  margin: 4% 6% 0 0;
-  width: 25%;
-  max-width: 300px;
-}
-
-/* Tabla de sopa de letras */
-table {
-  border-collapse: collapse;
-  margin: auto;
-  text-transform: uppercase;
-  width: 90%;
-  max-width: 800px;
-}
-
-td {
-  width: 3vw;  /* Escalable según ancho de pantalla */
-  height: 3vw;
-  max-width: 40px;
-  max-height: 40px;
-  border: 1px solid #000;
-  background-color: white;
-  text-align: center;
-  cursor: pointer;
-  font-size: 1em;
-}
-
-.correct {
-  background-color: #8eff8e;
-}
-
-/* Lista de palabras */
-#word-list {
-  margin-top: 20px;
-  text-align: left;
-}
-
-#word-list img {
-  max-width: 30px;
-  max-height: 30px;
-  vertical-align: middle;
-  margin-right: 10px;
-}
-
-.completed {
-  text-decoration: line-through;
-  color: #555;
-}
-
-.pista {
-  background-color: orange;
-  color: white;
-}
-
-.palabra-correcta {
-  background-color: green;
-  color: white;
-}
-
-.letras-seleccionadas {
-  background-color: blue;
-  color: white;
-}
-
-/* Contenido central */
-#contenido-central {
-  text-align: center;
-  width: 65%;
-  margin: auto;
-}
-
-/* Mensaje emergente */
-#mensaje {
-  display: none;
-  position: fixed;
-  text-align: center;
-  background-color: white;
-  padding: 2%;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  max-width: 90%;
-  box-shadow: 0 0 10px rgba(0,0,0,0.5);
-}
-
-/* Media queries */
-@media screen and (max-width: 1024px) {
-  #tabla-dificultad {
-    float: none;
-    width: 80%;
-    margin: 2% auto;
+    font-family: "pokemon-classic";
+    src: url(./pokemon-classic.ttf);
   }
 
-  td {
-    width: 4vw;
-    height: 4vw;
-    max-width: 35px;
-    max-height: 35px;
-  }
-
-  #contenido-central {
-    width: 90%;
-  }
-}
-
-@media screen and (max-width: 480px) {
-  td {
-    width: 8vw;
-    height: 8vw;
-    max-width: 30px;
-    max-height: 30px;
+  body {
+    background-image: url(./imagenes/fondo.gif);
+    font-family: "pokemon-classic";
   }
 
   button, select, option {
-    font-size: 0.8em;
-    padding: 0.3em 0.6em;
+    font-family: "pokemon-classic";
   }
 
-  #tabla-dificultad img {
-    width: 80%;
+  #pokedex {
+    position: absolute;
+    width: 100%;
+    z-index: -1;
   }
-}
+
+  #tabla-dificultad {
+    float: right;
+    margin-right: 6%;
+    margin-top: 4%;
+  }
+
+  table {
+    border-collapse: collapse;
+    margin: auto;
+    text-transform: uppercase;
+  }
+
+  td {
+    width: 30px;
+    height: 30px;
+    border: 1px solid #000;
+    background-color: white;
+    text-align: center;
+    cursor: pointer;
+  }
+
+  .correct {
+    background-color: #8eff8e; /* Verde claro */
+  }
+
+  #word-list {
+    margin-top: 70%;
+  }
+
+  #word-list img {
+    max-width: 50px;
+    max-height: 50px;
+    vertical-align: middle;
+    margin-right: 10px;
+  }
+
+  .completed {
+    text-decoration: line-through;
+    color: #555;
+  }
+
+  .pista {
+    background-color: orange;
+    color: white;
+  }
+
+  .palabra-correcta {
+    background-color: green;
+    color: white;
+  }
+
+  .letras-seleccionadas {
+    background-color: blue;
+    color: white;
+  }
+
+  #contenido-central {
+    text-align: center;
+    width: 65%;
+  }
+
+  #mensaje {
+    display: none;
+    position: absolute;
+    text-align: center;
+    background-color: white;
+    padding: 2%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
