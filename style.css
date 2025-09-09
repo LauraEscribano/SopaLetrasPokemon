@@ -1,91 +1,120 @@
 @font-face {
-    font-family: "pokemon-classic";
-    src: url(./pokemon-classic.ttf);
+  font-family: "pokemon-classic";
+  src: url(./pokemon-classic.ttf);
+}
+
+body {
+  margin: 0;
+  font-family: "pokemon-classic";
+  background-image: url(./imagenes/fondo.gif);
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* Contenedor principal */
+#pokedex-container {
+  position: relative;
+  width: 90%;       /* se ajusta al ancho de la pantalla */
+  max-width: 1200px;/* no se hace demasiado grande */
+  aspect-ratio: 3 / 2; /* mantiene proporción */
+  background: url(./imagenes/pokedex.png) no-repeat center;
+  background-size: contain;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 1%;
+  box-sizing: border-box;
+}
+
+/* Panel de dificultad / lista de palabras */
+#tabla-dificultad {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 1;
+}
+
+/* Contenido central: tabla de sopa de letras */
+#contenido-central {
+  width: 65%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 1;
+}
+
+/* Tabla de letras */
+table {
+  border-collapse: collapse;
+  text-transform: uppercase;
+  width: 100%;
+  max-width: 100%;
+}
+
+td {
+  width: 30px;
+  height: 30px;
+  border: 1px solid #000;
+  text-align: center;
+  cursor: pointer;
+  background-color: white;
+}
+
+/* Palabras encontradas */
+.correct { background-color: #8eff8e; }
+.completed { text-decoration: line-through; color: #555; }
+.pista { background-color: orange; color: white; }
+.palabra-correcta { background-color: green; color: white; }
+.letras-seleccionadas { background-color: blue; color: white; }
+
+/* Mensajes */
+#mensaje {
+  display: none;
+  position: absolute;
+  text-align: center;
+  background-color: white;
+  padding: 2%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+}
+
+/* Lista de palabras */
+#word-list {
+  margin-top: 20px;
+}
+
+#word-list img {
+  max-width: 50px;
+  max-height: 50px;
+  margin-right: 10px;
+}
+
+/* Responsivo: en pantallas muy pequeñas */
+@media (max-width: 900px) {
+  #pokedex-container {
+    flex-direction: column;
+    align-items: center;
   }
 
-  body {
-    background-image: url(./imagenes/fondo.gif);
-    font-family: "pokemon-classic";
-  }
-
-  button, select, option {
-    font-family: "pokemon-classic";
-  }
-
-  #pokedex {
-    position: absolute;
-    width: 100%;
-    z-index: -1;
-  }
-
-  #tabla-dificultad {
-    float: right;
-    margin-right: 6%;
-    margin-top: 4%;
-  }
-
-  table {
-    border-collapse: collapse;
-    margin: auto;
-    text-transform: uppercase;
+  #tabla-dificultad, #contenido-central {
+    width: 90%;
+    margin: 10px 0;
   }
 
   td {
-    width: 30px;
-    height: 30px;
-    border: 1px solid #000;
-    background-color: white;
-    text-align: center;
-    cursor: pointer;
-  }
-
-  .correct {
-    background-color: #8eff8e; /* Verde claro */
-  }
-
-  #word-list {
-    margin-top: 70%;
+    width: 25px;
+    height: 25px;
   }
 
   #word-list img {
-    max-width: 50px;
-    max-height: 50px;
-    vertical-align: middle;
-    margin-right: 10px;
+    max-width: 40px;
+    max-height: 40px;
   }
-
-  .completed {
-    text-decoration: line-through;
-    color: #555;
-  }
-
-  .pista {
-    background-color: orange;
-    color: white;
-  }
-
-  .palabra-correcta {
-    background-color: green;
-    color: white;
-  }
-
-  .letras-seleccionadas {
-    background-color: blue;
-    color: white;
-  }
-
-  #contenido-central {
-    text-align: center;
-    width: 65%;
-  }
-
-  #mensaje {
-    display: none;
-    position: absolute;
-    text-align: center;
-    background-color: white;
-    padding: 2%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
+}
