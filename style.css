@@ -16,7 +16,6 @@ body {
 #pokedex {
   position: absolute;
   top: 0;
-  left: 0;
   width: auto;      
   height: 100vh;    
   max-width: 100%;  
